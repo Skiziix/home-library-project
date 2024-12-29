@@ -22,7 +22,7 @@ CREATE TABLE book
 );
 
 CREATE VIEW v_recent_books as
-SELECT IIF(a.pseudonym IS NOT NULL, a.pseudonym, concat(a.first_name, ' ', a.last_name)) as author_name,
+SELECT IIF(a.pseudonym IS NOT NULL, a.pseudonym, a.first_name || ' ' || a.last_name) as author_name,
 	   b.book_title,
        b.publish_year
 FROM book b
