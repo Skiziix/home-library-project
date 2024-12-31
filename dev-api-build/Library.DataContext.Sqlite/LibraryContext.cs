@@ -30,11 +30,13 @@ public partial class LibraryContext : DbContext
             string path = string.Empty;
             if (dir.EndsWith("net8.0"))
             {
-                path = Path.Combine("..", "..", "..", "..", database);
+                path = Path.Combine("..", "..", "..", "..","..","dev-db-build", database);
             }
             else
             {
-                path = Path.Combine("..", database);
+                // /home/cannonball/Documents/library-project/dev-db-build/Library.db
+                // /home/cannonball/Documents/library-project/dev-api-build/Library.DataContext.Sqlite/LibraryContext.cs
+                path = Path.Combine("..", "../dev-db-build",  database);
             }
             path = Path.GetFullPath(path);
             if (!File.Exists(path))
