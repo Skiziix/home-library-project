@@ -8,7 +8,7 @@ public static class LibraryContextExtensions
 {
     public static IServiceCollection AddLibraryContext(
         this IServiceCollection services,
-        string relativePath = "..",
+        string relativePath = "../../dev-db-build",
         string databaseName = "Library.db")
     {
         string path = Path.Combine(relativePath, databaseName);
