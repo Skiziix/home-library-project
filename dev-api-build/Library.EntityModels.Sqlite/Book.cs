@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.EntityModels;
@@ -24,5 +25,6 @@ public partial class Book
 
     [ForeignKey("AuthorId")]
     [InverseProperty("Books")]
+    [XmlIgnore]
     public virtual Author? Author { get; set; }
 }

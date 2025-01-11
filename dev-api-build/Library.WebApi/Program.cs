@@ -1,11 +1,16 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Library.EntityModels;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Caching.Memory;
 using static System.Console;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 using Library.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add authentication service to the container.
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
 
 // Add services to the container.
 builder.Services.AddLibraryContext();
