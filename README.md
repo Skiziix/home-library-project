@@ -78,7 +78,7 @@ For deployment, consider hosting on:
 This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## Author
-[Your Name] - [Your Contact/Portfolio]
+Seth Rearick - [Your Contact/Portfolio]
 
 ## Contributions
 Contributions are welcome! Feel free to fork and submit a pull request.
