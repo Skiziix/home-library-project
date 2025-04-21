@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Library.EntityModels;
 using Library.WebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 namespace Library.WebApi.Controllers;
+
 
 // Base address: api/books
 [Route("api/[controller]")]
@@ -16,6 +18,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize("read:privbooks")]
     [ProducesResponseType(200, Type = typeof(IEnumerable<Book>))]
     public async Task<IEnumerable<Book>> GetBooks(int? authorId)
     {
